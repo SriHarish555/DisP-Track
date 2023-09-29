@@ -114,10 +114,17 @@ function UploadForm() {
             </pre>     
           </div>
 
+          <label htmlFor="documentID" className='uploadform_label'>Document ID (Copy the Document ID to retrieve it in the future)</label>
+          <div>
+            <pre className='metadata--pre'>
+              {docid}
+            </pre>     
+          </div>
+
           <label htmlFor="hash" className='uploadform_label'>Hash of MetaData</label>
           <div>
             <pre className='metadata--pre'>
-              Hash: {hash}
+              {hash}
             </pre>     
           </div>
 
