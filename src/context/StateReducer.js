@@ -1,10 +1,10 @@
 import { reducerCases } from "./Constants";
 
 export const initialState = {
-  fileInfo : undefined,
-  contract : undefined,
-  retrieved_data : undefined,
-  redirect_page : false
+  fileInfo: undefined,
+  contract: undefined,
+  retrieved_data: undefined,
+  redirect_page: false,
 };
 
 const reducer = (state, action) => {
@@ -24,14 +24,14 @@ const reducer = (state, action) => {
     case reducerCases.SET_RETRIEVED_DATA: {
       return {
         ...state,
-        retrieved_data: action.retrieved_data
-      }
+        retrieved_data: action.retrieved_data,
+      };
     }
-    case reducerCases.SET_REDIRECT:{
-      return{
+    case reducerCases.SET_REDIRECT: {
+      return {
         ...state,
-        redirect_page: action.redirect_page
-      }
+        redirect_page: action.redirect_page,
+      };
     }
   }
 };
