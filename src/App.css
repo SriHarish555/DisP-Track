@@ -2,8 +2,6 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  display: flex;
-  flex-direction: column;
 }
 
 body {
@@ -314,7 +312,8 @@ html::-webkit-scrollbar-track {
   text-align: center;
   padding: 20px;
   margin-top: 50px;
-  position: relative;
+  display: flex;
+  flex-direction: column;
   /*background-color: white;*/
   background: rgba(255, 255, 255, 0.15);
   backdrop-filter: blur(5px);
