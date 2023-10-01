@@ -70,7 +70,7 @@ function UploadForm() {
   };
 
   const helperHome = () => {
-    navigate("/DisP-Track/");
+    navigate("/");
   };
 
   const handleSubmit = async (event) => {
