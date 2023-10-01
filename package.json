@@ -1,10 +1,9 @@
 {
-  "homepage": "https://Vinai04.github.io/DisP-Track/",
-  "name": "disp-track",
+  "name": "disp",
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "scripts": {
+ "scripts": {
     "predeploy": "npm run build",
     "deploy": "gh-pages -d dist",
     "dev": "vite",
