@@ -19,7 +19,7 @@ function UploadForm() {
   const [tick, setTick] = useState(false);
 
   if (fileInfo == null) {
-    return <Navigate to="/DisP-Track/" />;
+    navigate("/DisP-Track/");
   }
 
   const { name, size, type, lastModifiedDate } = fileInfo;

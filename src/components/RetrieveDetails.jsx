@@ -53,14 +53,6 @@ function RetrieveDetails() {
           </>
         )}
       </div>
-
-      <ReactLoading
-        type={"cubes"}
-        color={"#33F8EF"}
-        height={300}
-        width={100}
-        className="loader"
-      />
     </div>
   );
 }

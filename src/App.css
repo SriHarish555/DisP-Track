@@ -304,6 +304,7 @@ html::-webkit-scrollbar-track {
   font-family: "Jost", sans-serif;
   font-size: small;
   font-weight: 100;
+  /* position: fixed; */
   left: 0;
   bottom: 0;
   width: 100%;
