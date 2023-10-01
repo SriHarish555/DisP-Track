@@ -3,7 +3,6 @@ import { useStateProvider } from "../context/StateContext";
 import { Navigate } from "react-router-dom";
 import { reducerCases } from "../context/Constants";
 import { useEffect } from "react";
-import { NotificationManager } from "react-notifications";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
