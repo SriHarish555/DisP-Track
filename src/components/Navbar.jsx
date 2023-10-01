@@ -1,7 +1,6 @@
 import { useState } from "react";
 import "../App.css";
 import ConnectWallet from "./ConnectWallet";
-import { NotificationContainer } from "react-notifications";
 import { useNavigate } from "react-router-dom";
 
 function Navbar() {
@@ -21,7 +20,6 @@ function Navbar() {
           {/*<a href=""><img src="profile.png" className="nav--profile"/></a>*/}
         </div>
       </div>
-      <NotificationContainer />
     </>
   );
 }
