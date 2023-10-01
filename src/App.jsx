@@ -19,7 +19,7 @@ function App() {
           <BrowserRouter>
             <Navbar />
             <Routes>
-              <Route path="/DisP-Track" element={<MainContent />}></Route>
+              <Route path="/" element={<MainContent />}></Route>
               <Route path="/DisP-Track/upload" element={<UploadForm />}></Route>
               <Route
                 path="/Disp-Track/retrieve"
