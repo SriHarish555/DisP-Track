@@ -4,7 +4,6 @@ import uuid4 from "uuid4";
 import { useStateProvider } from "../context/StateContext";
 import { Navigate } from "react-router-dom";
 import { ethers } from "ethers";
-import "react-notifications/lib/notifications.css";
 import ReactLoading from "react-loading";
 import UploadSuccess from "./UploadSuccess";
 import { ToastContainer, toast } from "react-toastify";
@@ -23,7 +22,6 @@ function UploadForm() {
   }
 
   const { name, size, type, lastModifiedDate } = fileInfo;
-  const date = String(lastModifiedDate);
 
   const fileNameWithoutExtension = name.split(".").slice(0, -1).join(".");
 
