@@ -20,9 +20,9 @@ function App() {
             <Navbar />
             <Routes>
               <Route path="/" element={<MainContent />}></Route>
-              <Route path="/DisP-Track/upload" element={<UploadForm />}></Route>
+              <Route path="/upload" element={<UploadForm />}></Route>
               <Route
-                path="/Disp-Track/retrieve"
+                path="/retrieve"
                 element={<RetrieveDetails />}
               ></Route>
             </Routes>

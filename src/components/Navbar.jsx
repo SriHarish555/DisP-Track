@@ -6,7 +6,7 @@ import { useNavigate } from "react-router-dom";
 function Navbar() {
   let navigate = useNavigate();
   const handleClick = () => {
-    navigate("/DisP-Track/");
+    navigate("/");
   };
 
   return (
