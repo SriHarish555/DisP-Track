@@ -1,7 +1,7 @@
 import "./App.css";
 import Navbar from "./components/Navbar";
 import MainContent from "./components/MainContent";
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, BrowserRouter } from "react-router-dom";
 import UploadForm from "./components/UploadForm";
 import { StateProvider } from "./context/StateContext";
 import reducer, { initialState } from "./context/StateReducer";
@@ -16,6 +16,7 @@ function App() {
       <div className="mainApp">
         <StateProvider initialState={initialState} reducer={reducer}>
           <ToastContainer />
+          <BrowserRouter>
           <Navbar />
           <Routes>
             <Route path="/" element={<MainContent />}></Route>
@@ -23,6 +24,7 @@ function App() {
             <Route path="/retrieve" element={<RetrieveDetails />}></Route>
             <Route path="*" element={<MainContent />}></Route>
           </Routes>
+          </BrowserRouter>
         </StateProvider>
         <Footer />
       </div>
