@@ -16,9 +16,12 @@ function UploadForm() {
   const [{ fileInfo, contract }, dispatch] = useStateProvider();
   const [uploadLoad, setUploadLoad] = useState(false);
   const [tick, setTick] = useState(false);
+  console.log(fileInfo)
 
-  if (fileInfo == null) {
+  if (fileInfo == undefined) {
+    console.log("Navigating");
     navigate("/");
+    return
   }
 
   const { name, size, type, lastModifiedDate } = fileInfo;
