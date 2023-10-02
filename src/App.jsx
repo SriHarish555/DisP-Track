@@ -21,10 +21,9 @@ function App() {
             <Routes>
               <Route path="/" element={<MainContent />}></Route>
               <Route path="/upload" element={<UploadForm />}></Route>
-              <Route
-                path="/retrieve"
-                element={<RetrieveDetails />}
-              ></Route>
+              <Route path="/retrieve" element={<RetrieveDetails />}></Route>
+              <Route path="*" element={<MainContent />}></Route>
+
             </Routes>
           </BrowserRouter>
         </StateProvider>
