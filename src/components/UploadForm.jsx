@@ -20,8 +20,8 @@ function UploadForm() {
 
   if (fileInfo == undefined) {
     console.log("Navigating");
-    navigate("/");
-    return(<></>)
+    // navigate("/");
+    return(<>hello world</>)
   }
 
   const { name, size, type, lastModifiedDate } = fileInfo;

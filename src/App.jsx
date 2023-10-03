@@ -18,8 +18,8 @@ function App() {
           <ToastContainer />
           <BrowserRouter>
             <Navbar />
-            <Routes>{
-              console.log("Printing")}
+            <Routes>
+              {console.log("Printing")}
               <Route path="/" element={<MainContent />}></Route>
               <Route path="/upload" element={<UploadForm />}></Route>
               <Route path="/retrieve" element={<RetrieveDetails />}></Route>
