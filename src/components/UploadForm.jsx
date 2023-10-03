@@ -20,7 +20,7 @@ function UploadForm() {
 
   if (fileInfo == undefined) {
     console.log("Navigating");
-    // navigate("/");
+    navigate("/");
     return(<>hello world</>)
   }
 
