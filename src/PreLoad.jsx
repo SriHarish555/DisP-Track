@@ -1,8 +1,8 @@
 import React from "react";
 import ReactLoading from "react-loading";
-import App from "./App";
 
 const PreLoad = () => {
+  const App = React.lazy(() => import("./App"));
   return (
     <>
       <React.Suspense
