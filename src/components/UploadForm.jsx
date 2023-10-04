@@ -18,11 +18,16 @@ function UploadForm() {
   const [tick, setTick] = useState(false);
   console.log(fileInfo)
 
-  if (fileInfo == undefined) {
-    console.log("Navigating");
-    navigate("/");
-    return(<>hello world</>)
-  }
+  useEffect(()=>{
+    if (fileInfo == undefined) {
+      console.log("Navigating");
+      navigate("/");
+      return(<>hello world</>)
+    }
+
+  },[fileInfo])
+
+  
 
   const { name, size, type, lastModifiedDate } = fileInfo;
 
