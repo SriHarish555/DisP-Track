@@ -4,7 +4,7 @@ import ReactLoading from "react-loading";
 const PreLoad = () => {
   const App = React.lazy(() => import("./App"));
   const [loader, setLoader] = useState(true);
-  setTimeout(() => setLoader(false), 2000);
+  setTimeout(() => setLoader(false), 5000);
   return (
     <>
       <React.Suspense
