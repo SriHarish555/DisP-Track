@@ -16,14 +16,14 @@ function UploadForm() {
   const [{ fileInfo, contract }, dispatch] = useStateProvider();
   const [uploadLoad, setUploadLoad] = useState(false);
   const [tick, setTick] = useState(false);
-  console.log(fileInfo)
+  console.log(fileInfo);
 
-  if(fileInfo==undefined){
+  if (fileInfo == undefined) {
     console.log("ABORTING");
-    return (<Navigate to="/"/>)
+    return <Navigate to="/" />;
   }
 
-  const { name='', size='', type='', lastModifiedDate='' } = fileInfo;
+  const { name = "", size = "", type = "", lastModifiedDate = "" } = fileInfo;
 
   const fileNameWithoutExtension = name.split(".").slice(0, -1).join(".");
 
@@ -144,9 +144,6 @@ function UploadForm() {
 
   return (
     <>
-    {
-      !fileInfo && <Navigate to={'/'} /> 
-    }
       <div className="main">
         <div className="heading--text">
           <h1 className="uploadform_h1">Document Details</h1>
