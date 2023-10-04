@@ -26,7 +26,7 @@ function App() {
         <>
           <p>Please wait while we load the page</p>
           <ReactLoading
-            type={"cubes"}
+            type={"spokes"}
             color={"#33F8EF"}
             height={100}
             width={100}
