@@ -24,7 +24,6 @@ function App() {
     <>
       {loading && (
         <>
-          <p>Please wait while we load the page</p>
           <ReactLoading
             type={"spokes"}
             color={"#33F8EF"}
@@ -32,6 +31,7 @@ function App() {
             width={100}
             className="loader"
           />
+          <p>Please wait while we load the page</p>
         </>
       )}
       {!loading && (
