@@ -1,7 +1,7 @@
 import "./App.css";
 import Navbar from "./components/Navbar";
 import MainContent from "./components/MainContent";
-import { Routes, Route, BrowserRouter } from "react-router-dom";
+import { Routes, Route, BrowserRouter, Navigate } from "react-router-dom";
 import UploadForm from "./components/UploadForm";
 import { StateProvider } from "./context/StateContext";
 import reducer, { initialState } from "./context/StateReducer";
@@ -45,7 +45,7 @@ function App() {
                 <Route path="/" element={<MainContent />}></Route>
                 <Route path="/upload" element={<UploadForm />}></Route>
                 <Route path="/retrieve" element={<RetrieveDetails />}></Route>
-                <Route path="*" element={<MainContent />}></Route>
+                <Route path="*" element={<><Navigate to="/" /></>}></Route>
               </Routes>
             </BrowserRouter>
           </StateProvider>
