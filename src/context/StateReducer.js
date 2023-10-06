@@ -5,6 +5,7 @@ export const initialState = {
   contract: undefined,
   retrieved_data: undefined,
   redirect_page: false,
+  transaction_status: false,
 };
 
 const reducer = (state, action) => {
@@ -31,6 +32,12 @@ const reducer = (state, action) => {
       return {
         ...state,
         redirect_page: action.redirect_page,
+      };
+    }
+    case reducerCases.SET_TRANSACTION_STATUS: {
+      return {
+        ...state,
+        transaction_status: action.transaction_status,
       };
     }
   }

@@ -9,20 +9,20 @@ import uuid4 from "uuid4";
 import { useStateProvider } from "../context/StateContext";
 import "./UploadForm.css";
 import UploadSuccess from "./UploadSuccess";
+import { reducerCases } from "../context/Constants";
 
 function UploadForm() {
   let navigate = useNavigate();
-  const [{ fileInfo, contract }, dispatch] = useStateProvider();
+  const [{ transaction_status, fileInfo, contract }, dispatch] =
+    useStateProvider();
   const [uploadLoad, setUploadLoad] = useState(false);
   const [tick, setTick] = useState(false);
-  console.log(fileInfo);
 
   if (fileInfo == undefined) {
-    console.log("ABORTING");
     return <Navigate to="/" />;
   }
 
-  const { name = "", size = "", type = "", lastModifiedDate = "" } = fileInfo;
+  const { name, size, type, lastModifiedDate } = fileInfo;
 
   const fileNameWithoutExtension = name.split(".").slice(0, -1).join(".");
 
@@ -91,29 +91,35 @@ function UploadForm() {
       return;
     }
     setUploadLoad(true);
+    dispatch({
+      type: reducerCases.SET_TRANSACTION_STATUS,
+      transaction_status: true,
+    });
     try {
       const tx = await contract.upload(_identifier, _data);
+      console.log(tx);
       let trans = await tx.wait();
-
-      trans.then(
-        setUploadLoad(false),
-        setTick(true),
-
-        toast.success("Document upload Success", {
-          position: "top-center",
-          autoClose: 3000,
-          hideProgressBar: true,
-          closeOnClick: true,
-          pauseOnHover: true,
-          draggable: true,
-          progress: undefined,
-          theme: "colored",
-        }),
-        setTimeout(helperHome, 3000)
-      );
-    } catch (err) {
+      console.log(trans);
       setUploadLoad(false);
+      setTick(true);
+      dispatch({
+        type: reducerCases.SET_TRANSACTION_STATUS,
+        transaction_status: false,
+      });
+      toast.success("Document Uploaded Successfully", {
+        position: "top-center",
+        autoClose: 3000,
+        hideProgressBar: true,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "colored",
+      }),
+        setTimeout(helperHome, 3000);
+    } catch (err) {
       console.log(err);
+      setUploadLoad(false);
     }
   };
 
