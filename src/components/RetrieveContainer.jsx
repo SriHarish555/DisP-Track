@@ -1,10 +1,9 @@
-import React, { useState } from "react";
-import { useStateProvider } from "../context/StateContext";
+import React, { useEffect, useState } from "react";
 import { Navigate } from "react-router-dom";
-import { reducerCases } from "../context/Constants";
-import { useEffect } from "react";
-import { ToastContainer, toast } from "react-toastify";
+import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { reducerCases } from "../context/Constants";
+import { useStateProvider } from "../context/StateContext";
 
 function RetrieveContainer() {
   const [{ redirect_page, contract, retrieved_data }, dispatch] =

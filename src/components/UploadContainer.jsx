@@ -1,8 +1,7 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Navigate } from "react-router-dom";
-import { useStateProvider } from "../context/StateContext";
 import { reducerCases } from "../context/Constants";
-import { useEffect } from "react";
+import { useStateProvider } from "../context/StateContext";
 
 function UploadContainer() {
   const [selectedFile, setSelectedFile] = useState(null);

@@ -1,8 +1,8 @@
 import React, { useState } from "react";
-import { useStateProvider } from "../context/StateContext";
-import "./RetrieveDetails.css";
 import ReactLoading from "react-loading";
 import { Navigate } from "react-router";
+import { useStateProvider } from "../context/StateContext";
+import "./RetrieveDetails.css";
 
 function RetrieveDetails() {
   const [loader, setLoader] = useState(true);

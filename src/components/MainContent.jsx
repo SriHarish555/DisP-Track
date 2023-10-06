@@ -1,7 +1,7 @@
-import React, { useState } from "react";
+import React from "react";
 import "../App.css";
-import UploadContainer from "./UploadContainer";
 import RetrieveContainer from "./RetrieveContainer";
+import UploadContainer from "./UploadContainer";
 
 function MainContent() {
   return (

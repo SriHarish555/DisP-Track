@@ -1,15 +1,14 @@
-import React, { useState, useEffect, useRef } from "react";
-import "./UploadForm.css";
+import { ethers } from "ethers";
+import React, { useRef, useState } from "react";
+import ReactLoading from "react-loading";
+import { Navigate, useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import { Tooltip } from "react-tooltip";
 import uuid4 from "uuid4";
 import { useStateProvider } from "../context/StateContext";
-import { Navigate } from "react-router-dom";
-import { ethers } from "ethers";
-import ReactLoading from "react-loading";
+import "./UploadForm.css";
 import UploadSuccess from "./UploadSuccess";
-import { ToastContainer, toast } from "react-toastify";
-import { Tooltip } from "react-tooltip";
-import "react-toastify/dist/ReactToastify.css";
-import { useNavigate } from "react-router-dom";
 
 function UploadForm() {
   let navigate = useNavigate();

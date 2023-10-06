@@ -1,12 +1,12 @@
-import { useState } from "react";
-import "../App.css";
 import { ethers } from "ethers";
-import DisPTrack_abi from "../contracts/DisPTrack_abi.json";
+import { useState } from "react";
+import ReactLoading from "react-loading";
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import "../App.css";
 import { reducerCases } from "../context/Constants";
 import { useStateProvider } from "../context/StateContext";
-import ReactLoading from "react-loading";
-import { ToastContainer, toast } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
+import DisPTrack_abi from "../contracts/DisPTrack_abi.json";
 
 function ConnectWallet() {
   const contractAddress = "0x7494A2F3e17D172a4F54FacBCc0a0769c957D63c";

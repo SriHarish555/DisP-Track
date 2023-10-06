@@ -1,12 +1,27 @@
-import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import "../App.css";
 import ConnectWallet from "./ConnectWallet";
-import { useNavigate } from "react-router-dom";
+import { useStateProvider } from "../context/StateContext";
+import { toast } from "react-toastify";
 
 function Navbar() {
+  const [{ transaction_status }, dispatch] = useStateProvider();
   let navigate = useNavigate();
   const handleClick = () => {
-    navigate("/");
+    if (transaction_status == false) {
+      navigate("/");
+    } else {
+      toast.warning("Transaction in progress", {
+        position: "top-center",
+        autoClose: 3000,
+        hideProgressBar: true,
+        closeOnClick: true,
+        pauseOnHover: false,
+        draggable: true,
+        progress: undefined,
+        theme: "colored",
+      });
+    }
   };
 
   return (

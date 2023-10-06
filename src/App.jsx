@@ -1,16 +1,14 @@
+import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import "./App.css";
-import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
 import MainContent from "./components/MainContent";
-import { Routes, Route, BrowserRouter, Navigate } from "react-router-dom";
+import Navbar from "./components/Navbar";
+import RetrieveDetails from "./components/RetrieveDetails";
 import UploadForm from "./components/UploadForm";
 import { StateProvider } from "./context/StateContext";
 import reducer, { initialState } from "./context/StateReducer";
-import RetrieveDetails from "./components/RetrieveDetails";
-import { ToastContainer, toast } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
-import Footer from "./components/Footer";
-import { useState } from "react";
-import ReactLoading from "react-loading";
 
 function App() {
   return (
@@ -21,18 +19,10 @@ function App() {
           <BrowserRouter>
             <Navbar />
             <Routes>
-              {console.log("Printing")}
               <Route path="/" element={<MainContent />}></Route>
               <Route path="/upload" element={<UploadForm />}></Route>
               <Route path="/retrieve" element={<RetrieveDetails />}></Route>
-              <Route
-                path="*"
-                element={
-                  <>
-                    <Navigate to="/" />
-                  </>
-                }
-              ></Route>
+              <Route path="*" element={<Navigate to="/" />}></Route>
             </Routes>
           </BrowserRouter>
         </StateProvider>
