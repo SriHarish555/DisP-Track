@@ -118,6 +118,10 @@ function UploadForm() {
       }),
         setTimeout(helperHome, 3000);
     } catch (err) {
+      dispatch({
+        type: reducerCases.SET_TRANSACTION_STATUS,
+        transaction_status: false,
+      });
       console.log(err);
       setUploadLoad(false);
     }
